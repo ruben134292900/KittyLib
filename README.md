@@ -6,5 +6,5 @@ A Lua 5.4 and 5.1 port coming soon!
 | Lua Version | Compatibility |
 | :-: | :-- |
 | LuaU | 100% |
-| Lua 5.4 | ~75% (Already has some features implemented) |
-| Lua 5.1 | ~50% (Missing typeof function in LuaU) |
+| Lua 5.4 | ~95% (Most are implemented) |
+| Lua 5.1 | 100% |
