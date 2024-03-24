@@ -6,5 +6,5 @@ A Lua 5.4 and 5.1 port coming soon!
 | Lua Version | Compatibility |
 | :-: | :-- |
 | LuaU | 100% |
-| Lua 5.4 | ~95% (Most are implemented) |
-| Lua 5.1 | 100% |
+| Lua 5.4 | ~95% (Missing string.divide and some luau table functions) |
+| Lua 5.1 | ~95% (Missing binary functions and some luau table functions) |
