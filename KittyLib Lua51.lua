@@ -1,13 +1,8 @@
 local table = setmetatable({}, {__index = table})
 local math = setmetatable({}, {__index = math})
 local string = setmetatable({}, {__index = string})
-local common = {}
 
-local KittyLib = {_VERSION = "0.1.1"}
-
-do -- commons
-
-end
+local KittyLib = {_VERSION = "0.1.2"}
 
 do -- string
 	function string.split(s, sep)
@@ -72,14 +67,8 @@ do -- math
 		return math.modf(n * mult) / mult
 	end
 
-	function math.decimal(n)
-		if math.type(n) == "float" then
-			local str = tostring(n)
-			local dec = string.split(str, ".")
-			return #(dec[2])
-		else
-			return nil
-		end
+	function math.round2(n, d)
+		return math.floor(n / d) * d
 	end
 
 	function math.randomfloat(min, max, decimal)
@@ -162,6 +151,14 @@ do -- table
 		return t
 	end
 
+	function table.clear(t)
+		for i, v in next, t do
+			t[i] = nil
+		end
+
+		return t
+	end
+
 	function table.replace(t, vt)
 		for i, v in next, vt do
 			if t[i] then
@@ -238,19 +235,10 @@ do -- table
 		end
 		return len
 	end
-
-	function table.clear(t)
-		for i, v in next, t do
-			t[i] = nil
-		end
-
-		return t
-	end
 end
 
 KittyLib.math = math
 KittyLib.table = table
 KittyLib.string = string
-KittyLib.common = common
 
 return KittyLib

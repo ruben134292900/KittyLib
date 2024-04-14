@@ -1,13 +1,8 @@
 local table = setmetatable({}, {__index = table})
 local math = setmetatable({}, {__index = math})
 local string = setmetatable({}, {__index = string})
-local common = {}
 
-local KittyLib = {_VERSION = "0.1.1"}
-
-do -- commons
-
-end
+local KittyLib = {_VERSION = "0.1.2"}
 
 do -- string
 	function string.split(s: string, sep: string): ({string}, number)
@@ -72,12 +67,8 @@ do -- math
 		return math.modf(n * mult) / mult
 	end
 
-	function math.decimal(n: number): number?
-		if math.type(n) == "float" then
-			return #(tostring(n):split(".")[2])
-		else
-			return nil
-		end
+	function math.round2(n: number, decimal: number): number
+		return math.floor(n / decimal) * decimal
 	end
 
 	function math.tobinary(n: number): string
@@ -278,6 +269,5 @@ end
 KittyLib.math = math
 KittyLib.table = table
 KittyLib.string = string
-KittyLib.common = common
 
 return KittyLib
